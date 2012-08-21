@@ -1,5 +1,3 @@
-package com.shanesmith.wikidot;
-
 /**
  * Wikidot API Open Source Project
  * Java API library
@@ -11,6 +9,8 @@ package com.shanesmith.wikidot;
  * Licensed under GNU GPL v3
  **/
 
+package com.shanesmith.wikidot;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -20,8 +20,8 @@ import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 import org.apache.xmlrpc.client.XmlRpcSun15HttpTransportFactory;
 
 /**
- * 
  * Open-source implementation of the Wikidot API in Java
+ * @author Shane Smith (leiger)
  */
 public class WikidotAPI
 {
