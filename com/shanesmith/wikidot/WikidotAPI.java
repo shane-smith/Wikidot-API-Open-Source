@@ -1,3 +1,5 @@
+package com.shanesmith.wikidot;
+
 /**
  * Wikidot API Open Source Project
  * Java API library
