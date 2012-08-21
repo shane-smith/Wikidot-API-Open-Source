@@ -5,6 +5,8 @@ package com.shanesmith.wikidot;
  * Java API library
  * 
  * Lead developer: Shane Smith (leiger)
+ * Developer Website: www.shane-smith.com
+ * Project Website: api-java.wikidot.com
  * 
  * Licensed under GNU GPL v3
  **/
@@ -17,6 +19,10 @@ import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 import org.apache.xmlrpc.client.XmlRpcSun15HttpTransportFactory;
 
+/**
+ * 
+ * Open-source implementation of the Wikidot API in Java
+ */
 public class WikidotAPI
 {
 	private String user;
@@ -25,13 +31,21 @@ public class WikidotAPI
 	private XmlRpcClientConfigImpl config;
 	private XmlRpcClient client;
 	
-	// Get the client
+	/**
+	 * Get the XML-RPC client
+	 * @return XmlRpcClient object
+	 */
 	public XmlRpcClient getClient()
 	{
 		return client;
 	}
 	
-	// Constructor
+	/**
+	 * WikidotAPI constructor
+	 * @param applicationName Application name to send to API (as user)
+	 * @param apiKey Wikidot API key to send to API (as password)
+	 * @throws MalformedURLException
+	 */
 	public WikidotAPI(String applicationName, String apiKey) throws MalformedURLException
 	{
 		// Store variables
