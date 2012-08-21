@@ -16,11 +16,11 @@ import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 
 public class WikidotAPI
 {
-	private static String user;
-	private static String key;
-	private static final String SERVER_URL = "https://www.wikidot.com/xml-rpc-api.php";
-	private static XmlRpcClientConfigImpl config;
-	private static XmlRpcClient client;
+	private String user;
+	private String key;
+	private final String SERVER_URL = "https://www.wikidot.com/xml-rpc-api.php";
+	private XmlRpcClientConfigImpl config;
+	private XmlRpcClient client;
 	
 	// Get the client
 	public XmlRpcClient getClient()
