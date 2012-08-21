@@ -10,6 +10,7 @@
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 
@@ -46,5 +47,29 @@ public class WikidotAPI
 		// Initialise the client object
 		client = new XmlRpcClient();
 		client.setConfig(config);
+	}
+	
+	/**
+	 * Get a list of all valid API methods (system.listMethods)
+	 * @return List of all valid API methods
+	 * @throws XmlRpcException
+	 */
+	public String[] getMethodList() throws XmlRpcException
+	{
+		// Null parameters
+		Object[] params = null;
+		
+		// RPC
+		Object[] result = (Object[]) client.execute("system.listMethods", params);
+		
+		// Convert result to a String[]
+		String[] methodList = new String[result.length];
+		for (int i=0; i<result.length; i++)
+		{
+			methodList[i] = (String) result[i];
+		}
+		
+		// Return the result
+		return methodList;
 	}
 }
