@@ -20,7 +20,7 @@ import org.apache.xmlrpc.parser.TypeParser;
 import org.apache.xmlrpc.serializer.NullSerializer;
 
 /**
- * This class extends TypeFactoryImpl and caters for the Wikidot API's use of "<NIL>" as a data type.
+ * This class extends TypeFactoryImpl and caters for the Wikidot API's use of "NIL" as a data type.
  * @author Shane Smith (leiger)
  */
 public class WikidotTypeFactory extends TypeFactoryImpl
