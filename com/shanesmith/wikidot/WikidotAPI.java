@@ -90,4 +90,75 @@ public class WikidotAPI
 		// Return the result
 		return methodList;
 	}
+	
+	public void getCategoriesList()
+	{
+		// TODO
+	}
+	
+	public void getTagsList()
+	{
+		// TODO
+	}
+	
+	public void getPagesList()
+	{
+		// TODO
+	}
+	
+	public void getPagesMeta()
+	{
+		// TODO
+	}
+	
+	public void getPage()
+	{
+		// TODO
+	}
+	
+	public void setPage()
+	{
+		// TODO
+	}
+	
+	public void getFilesList()
+	{
+		// TODO
+	}
+	
+	public void getFilesMeta()
+	{
+		// TODO
+	}
+	
+	public void getFile()
+	{
+		// TODO
+	}
+	
+	public void getPostsList()
+	{
+		// TODO
+	}
+	
+	public void getPostsMeta()
+	{
+		// TODO
+	}
+	
+	public void getSites()
+	{
+		// TODO
+	}
+	
+	public void getUser()
+	{
+		// TODO
+	}
+	
+	public boolean pageExists()
+	{
+		// TODO
+		return true;
+	}
 }
