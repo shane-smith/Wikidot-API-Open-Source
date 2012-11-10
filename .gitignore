@@ -1,0 +1,5 @@
+target/
+com/shanesmith/test/
+.settings/
+.project
+.classpath
