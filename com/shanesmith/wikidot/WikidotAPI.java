@@ -100,9 +100,26 @@ public class WikidotAPI
 		return methodList;
 	}
 	
-	public void getCategoriesList()
+	/**
+	 * Implementation of categories.select
+	 * @param site
+	 * @return
+	 * @throws XmlRpcException
+	 */
+	public String[] getCategoriesList(String site) throws XmlRpcException
 	{
-		// TODO
+		// RPC
+		Object[] result = pushToAPI("categories.select", site);
+		
+		// Convert result to a String[]
+		String[] categoryList = new String[result.length];
+		for (int i=0; i<result.length; i++)
+		{
+			categoryList[i] = (String) result[i];
+		}
+		
+		// Return the result
+		return categoryList;
 	}
 	
 	public void getTagsList()
