@@ -13,6 +13,8 @@ package com.shanesmith.wikidot;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
@@ -74,9 +76,9 @@ public class WikidotAPI
 	 * @return Returned data
 	 * @throws XmlRpcException If there is an error during the API call
 	 */
-	private Object[] pushToAPI(String method, Object... params) throws XmlRpcException
+	private Object pushToAPI(String method, Object... params) throws XmlRpcException
 	{
-		return (Object[]) client.execute(method, params);
+		return (Object) client.execute(method, params);
 	}
 	
 	/**
@@ -87,7 +89,7 @@ public class WikidotAPI
 	public String[] getMethodList() throws XmlRpcException
 	{
 		// RPC
-		Object[] result = pushToAPI("system.listMethods", (Object[])null);
+		Object[] result = (Object[]) pushToAPI("system.listMethods", (Object[])null);
 		
 		// Convert result to a String[]
 		String[] methodList = new String[result.length];
@@ -109,7 +111,7 @@ public class WikidotAPI
 	public String[] getCategoriesList(String site) throws XmlRpcException
 	{
 		// RPC
-		Object[] result = pushToAPI("categories.select", site);
+		Object[] result = (Object[]) pushToAPI("categories.select", site);
 		
 		// Convert result to a String[]
 		String[] categoryList = new String[result.length];
@@ -178,12 +180,13 @@ public class WikidotAPI
 	 * @return User details
 	 * @throws XmlRpcException If there is an error during the API call
 	 */
-	public String getUser() throws XmlRpcException
+	public Map<String, Object> getUser() throws XmlRpcException
 	{
 		// RPC
-		Object[] result = pushToAPI("users.get_me", (Object[])null);
+		@SuppressWarnings("unchecked")
+		Map<String, Object> result = (HashMap<String, Object>) pushToAPI("users.get_me", (Object[])null);
 		
-		// TODO: Interpret result
-		return "Not yet implemented: "+result.toString();
+		// FORMAT: { name, title, id }
+		return result;
 	}
 }
