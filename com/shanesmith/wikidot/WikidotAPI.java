@@ -186,10 +186,4 @@ public class WikidotAPI
 		// TODO: Interpret result
 		return "Not yet implemented: "+result.toString();
 	}
-	
-	public boolean pageExists()
-	{
-		// TODO: Implement pageExists()
-		return true;
-	}
 }
