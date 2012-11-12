@@ -76,7 +76,7 @@ public class WikidotAPI
 	 * @return Returned data
 	 * @throws XmlRpcException If there is an error during the API call
 	 */
-	private Object pushToAPI(String method, Object[] params) throws XmlRpcException
+	private Object pushToAPI(String method, Object... params) throws XmlRpcException
 	{
 		return (Object) client.execute(method, params);
 	}
@@ -110,8 +110,12 @@ public class WikidotAPI
 	 */
 	public String[] getCategoriesList(String site) throws XmlRpcException
 	{
+		// Params
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("site", site);
+		
 		// RPC
-		Object[] result = (Object[]) pushToAPI("categories.select", site);
+		Object[] result = (Object[]) pushToAPI("categories.select", params);
 		
 		// Convert result to a String[]
 		String[] categoryList = new String[result.length];
