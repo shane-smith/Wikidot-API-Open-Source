@@ -44,7 +44,7 @@ public class WikidotAPI
 	 * WikidotAPI constructor
 	 * @param applicationName Application name to send to API (as user)
 	 * @param apiKey Wikidot API key to send to API (as password)
-	 * @throws MalformedURLException
+	 * @throws MalformedURLException If there is a problem with the URI used to access the Wikidot API
 	 */
 	public WikidotAPI(String applicationName, String apiKey) throws MalformedURLException
 	{
@@ -177,9 +177,19 @@ public class WikidotAPI
 		// TODO
 	}
 	
-	public void getUser()
+	/**
+	 * Implementation of users.get_me
+	 * NOT YET IMPLEMENTED
+	 * @return User details
+	 * @throws XmlRpcException If there is an error during the API call
+	 */
+	public String getUser() throws XmlRpcException
 	{
-		// TODO
+		// RPC
+		Object[] result = pushToAPI("users.get_me", (Object[])null);
+		
+		// TODO: Interpret result
+		return "Not yet implemented";
 	}
 	
 	public boolean pageExists()
