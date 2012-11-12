@@ -128,9 +128,32 @@ public class WikidotAPI
 		return categoryList;
 	}
 	
-	public void getPagesList()
+	/**
+	 * Implementation of pages.select
+	 * @param site The site that you wish to select pages from
+	 * @param categories A list of categories that you would like to select pages from
+	 * @return String array containing page names
+	 * @throws XmlRpcException If there is an error during the API call
+	 */
+	public String[] getPagesList(String site, String... categories) throws XmlRpcException
 	{
-		// TODO: Implement pages.select
+		// Params
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("site", site);
+		params.put("categories", categories);
+		
+		// RPC
+		Object[] result = (Object[]) pushToAPI("pages.select", params);
+		
+		// Convert result to a String[]
+		String[] pageList = new String[result.length];
+		for (int i=0; i<result.length; i++)
+		{
+			pageList[i] = (String) result[i];
+		}
+		
+		// Return the result
+		return pageList;
 	}
 	
 	public void getTagsList()
