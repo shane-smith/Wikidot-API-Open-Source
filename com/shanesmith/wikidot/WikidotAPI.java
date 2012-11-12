@@ -124,57 +124,52 @@ public class WikidotAPI
 	
 	public void getPagesList()
 	{
-		// TODO
+		// TODO: Implement pages.select
 	}
 	
 	public void getTagsList()
 	{
-		// TODO
+		// TODO: Implement tags.select
 	}
 	
 	public void getPagesMeta()
 	{
-		// TODO
+		// TODO: Implement pages.get_meta
 	}
 	
 	public void getPage()
 	{
-		// TODO
+		// TODO: Implement pages.get_one
 	}
 	
 	public void setPage()
 	{
-		// TODO
+		// TODO: Implement pages.save_one
 	}
 	
 	public void getFilesList()
 	{
-		// TODO
+		// TODO: Implement files.select
 	}
 	
 	public void getFilesMeta()
 	{
-		// TODO
+		// TODO: Implement files.get_meta
 	}
 	
 	public void getFile()
 	{
-		// TODO
+		// TODO: Implement files.get_one
 	}
 	
 	public void getPostsList()
 	{
-		// TODO
+		// TODO: Implement posts.select
 	}
 	
 	public void getPostsMeta()
 	{
-		// TODO
-	}
-	
-	public void getSites()
-	{
-		// TODO
+		// TODO: Implement posts.get
 	}
 	
 	/**
@@ -189,12 +184,12 @@ public class WikidotAPI
 		Object[] result = pushToAPI("users.get_me", (Object[])null);
 		
 		// TODO: Interpret result
-		return "Not yet implemented";
+		return "Not yet implemented: "+result.toString();
 	}
 	
 	public boolean pageExists()
 	{
-		// TODO
+		// TODO: Implement pageExists()
 		return true;
 	}
 }
