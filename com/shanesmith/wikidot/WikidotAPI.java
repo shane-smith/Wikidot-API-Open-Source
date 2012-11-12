@@ -25,6 +25,8 @@ import org.apache.xmlrpc.client.XmlRpcSun15HttpTransportFactory;
  */
 public class WikidotAPI
 {
+	/* TESTING SOMETHING */
+	
 	private String user;
 	private String key;
 	private final String SERVER_URL = "https://www.wikidot.com/xml-rpc-api.php";
