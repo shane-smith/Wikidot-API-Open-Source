@@ -37,7 +37,8 @@ public class WikidotAPI
 	 * Get the XML-RPC client
 	 * @return XmlRpcClient object
 	 */
-	public XmlRpcClient getClient()
+	@SuppressWarnings("unused")
+	private XmlRpcClient getClient()
 	{
 		return client;
 	}
