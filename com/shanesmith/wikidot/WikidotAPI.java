@@ -76,7 +76,7 @@ public class WikidotAPI
 	 * @return Returned data
 	 * @throws XmlRpcException If there is an error during the API call
 	 */
-	private Object pushToAPI(String method, Object... params) throws XmlRpcException
+	private Object pushToAPI(String method, Object[] params) throws XmlRpcException
 	{
 		return (Object) client.execute(method, params);
 	}
