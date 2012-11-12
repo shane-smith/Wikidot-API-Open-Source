@@ -82,7 +82,7 @@ public class WikidotAPI
 	/**
 	 * Get a list of all valid API methods (system.listMethods)
 	 * @return List of all valid API methods
-	 * @throws XmlRpcException
+	 * @throws XmlRpcException If there is an error during the API call
 	 */
 	public String[] getMethodList() throws XmlRpcException
 	{
@@ -102,9 +102,9 @@ public class WikidotAPI
 	
 	/**
 	 * Implementation of categories.select
-	 * @param site
-	 * @return
-	 * @throws XmlRpcException
+	 * @param site Wikidot site unix name
+	 * @return A list of categories for the requested site
+	 * @throws XmlRpcException If there is an error during the API call
 	 */
 	public String[] getCategoriesList(String site) throws XmlRpcException
 	{
@@ -122,12 +122,12 @@ public class WikidotAPI
 		return categoryList;
 	}
 	
-	public void getTagsList()
+	public void getPagesList()
 	{
 		// TODO
 	}
 	
-	public void getPagesList()
+	public void getTagsList()
 	{
 		// TODO
 	}
