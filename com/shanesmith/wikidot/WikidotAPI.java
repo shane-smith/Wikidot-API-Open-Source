@@ -68,17 +68,26 @@ public class WikidotAPI
 	}
 	
 	/**
+	 * Private helper method that is used internally
+	 * @param method Method name
+	 * @param params Parameters
+	 * @return Returned data
+	 * @throws XmlRpcException If there is an error during the API call
+	 */
+	private Object[] pushToAPI(String method, Object... params) throws XmlRpcException
+	{
+		return (Object[]) client.execute(method, params);
+	}
+	
+	/**
 	 * Get a list of all valid API methods (system.listMethods)
 	 * @return List of all valid API methods
 	 * @throws XmlRpcException
 	 */
 	public String[] getMethodList() throws XmlRpcException
 	{
-		// Null parameters
-		Object[] params = null;
-		
 		// RPC
-		Object[] result = (Object[]) client.execute("system.listMethods", params);
+		Object[] result = pushToAPI("system.listMethods", (Object[])null);
 		
 		// Convert result to a String[]
 		String[] methodList = new String[result.length];
