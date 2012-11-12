@@ -176,7 +176,6 @@ public class WikidotAPI
 	
 	/**
 	 * Implementation of users.get_me
-	 * NOT YET IMPLEMENTED
 	 * @return User details
 	 * @throws XmlRpcException If there is an error during the API call
 	 */
